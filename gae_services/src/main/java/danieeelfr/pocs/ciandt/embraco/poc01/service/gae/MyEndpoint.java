@@ -12,11 +12,13 @@ import com.google.api.server.spi.config.ApiNamespace;
 
 import javax.inject.Named;
 
+import static com.google.appengine.api.memcache.MemcacheServicePb.MemcacheService_3.Method.Get;
+
 /**
  * An endpoint class we are exposing
  */
 @Api(
-        name = "myApi",
+        name = "pocEmbracoApi",
         version = "v1",
         namespace = @ApiNamespace(
                 ownerDomain = "gae.service.poc01.embraco.ciandt.pocs.danieeelfr",
@@ -30,5 +32,25 @@ public class MyEndpoint {
      * A simple endpoint method that takes a name and says Hi back
      */
     @ApiMethod(name = "sayHi")
-    public MyBean sayHi(@Named("name") String name) {
-        MyBean response = new MyBean();
+    public sUsuario sayHi(@Named("name") String name) {
+        sUsuario response = new sUsuario();
+        response.setNome("Hi, " + name);
+
+        return response;
+    }
+
+    @ApiMethod(name = "login")
+    public sUsuario login(@Named("usuario") String usuario, @Named("senha") String senha) {
+
+        if (usuario.equals("teste")) {
+            sUsuario response = new sUsuario();
+
+            response.setNome(usuario);
+            response.setEmail(usuario + "@email.com");
+
+            return response;
+        }
+
+        return null;
+    }
+}

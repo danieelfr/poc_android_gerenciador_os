@@ -92,11 +92,11 @@ public class AtendimentoModel implements Serializable {
 
         List<AtendimentoModel> lista = new ArrayList<AtendimentoModel>();
 
-        AtendimentoModel atendimento1 = new AtendimentoModel(1, "OS 0001", "Carlos da Silva", "Avenida dos Andradas, 3000, Santa Efigência, Belo Horizonte - MG", "Descrição Equipamento Descrição Equipamento Descrição Equipamento Descrição Equipamento Descrição Equipamento", "Explicação do problema Explicação do problema Explicação do problema Explicação do problema ", data.format(date1), hora.format(date1));
-        AtendimentoModel atendimento2 = new AtendimentoModel(2, "OS 0002", "Silvana Oliveira Santos", "Avenida dos Andradas, 3000, Santa Efigência, Belo Horizonte - MG", "Descrição Equipamento Descrição Equipamento Descrição Equipamento Descrição Equipamento Descrição Equipamento", "Explicação do problema Explicação do problema Explicação do problema Explicação do problema", data.format(date2), hora.format(date2));
-        AtendimentoModel atendimento3 = new AtendimentoModel(3, "OS 0003", "Carlos Caramujo", "Avenida dos Andradas, 3000, Santa Efigência, Belo Horizonte - MG", "Descrição Equipamento Descrição Equipamento Descrição Equipamento Descrição Equipamento Descrição Equipamento", "Explicação do problema Explicação do problema Explicação do problema Explicação do problema", data.format(date3), hora.format(date3));
-        AtendimentoModel atendimento4 = new AtendimentoModel(4, "OS 0004", "João Profeta Jr", "Avenida dos Andradas, 3000, Santa Efigência, Belo Horizonte - MG", "Descrição Equipamento Descrição Equipamento Descrição Equipamento Descrição Equipamento Descrição Equipamento", "Explicação do problema Explicação do problema Explicação do problema Explicação do problema", data.format(date4), hora.format(date4));
-        AtendimentoModel atendimento5 = new AtendimentoModel(5, "OS 0005", "Guilherme Henrique Neto", "Avenida dos Andradas, 3000, Santa Efigência, Belo Horizonte - MG", "Descrição Equipamento", "Descricao Problema 5", data.format(date5), hora.format(date5));
+        AtendimentoModel atendimento1 = new AtendimentoModel(1, "OS A0001", "Carlos da Silva", "Avenida dos Andradas, 3000, Santa Efigência, Belo Horizonte - MG", "Geladeira", "Explicação do problema", data.format(date1), hora.format(date1));
+        AtendimentoModel atendimento2 = new AtendimentoModel(2, "OS B0002", "Silvana Oliveira Santos", "Avenida dos Andradas, 3000, Santa Efigência, Belo Horizonte - MG", "Geladeira", "Explicação do problema", data.format(date2), hora.format(date2));
+        AtendimentoModel atendimento3 = new AtendimentoModel(3, "OS A0003", "Carlos Caramujo", "Avenida dos Andradas, 3000, Santa Efigência, Belo Horizonte - MG", "Geladeira", "Explicação do problema", data.format(date3), hora.format(date3));
+        AtendimentoModel atendimento4 = new AtendimentoModel(4, "OS B0004", "João Profeta Jr", "Avenida dos Andradas, 3000, Santa Efigência, Belo Horizonte - MG", "Geladeira", "Explicação do problema", data.format(date4), hora.format(date4));
+        AtendimentoModel atendimento5 = new AtendimentoModel(5, "OS A005", "Guilherme Henrique Neto", "Avenida dos Andradas, 3000, Santa Efigência, Belo Horizonte - MG", "Descrição Equipamento", "Descricao Problema 5", data.format(date5), hora.format(date5));
 
         lista.add(atendimento1);
         lista.add(atendimento2);

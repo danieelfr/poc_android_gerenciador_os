@@ -22,10 +22,26 @@ sourceCompatibility = JavaVersion.VERSION_1_7
 targetCompatibility = JavaVersion.VERSION_1_7
 
 dependencies {
-    appengineSdk 'com.google.appengine:appengine-java-sdk:1.9.42'
-    compile 'com.google.appengine:appengine-endpoints:1.9.42'
-    compile 'com.google.appengine:appengine-endpoints-deps:1.9.42'
+    appengineSdk 'com.google.appengine:appengine-java-sdk:1.9.50'
+    compile 'com.google.appengine:appengine-endpoints:1.9.50'
+    compile 'com.google.appengine:appengine-endpoints-deps:1.9.50'
     compile 'javax.servlet:servlet-api:2.5'
+    compile(group: 'com.google.api-client', name: 'google-api-client', version: '1.21.0') {
+        // Exclude artifacts that the Android SDK/Runtime provides.
+        exclude(group: 'xpp3', module: 'xpp3')
+        exclude(group: 'org.apache.httpcomponents', module: 'httpclient')
+        exclude(group: 'junit', module: 'junit')
+        exclude(group: 'com.google.android', module: 'android')
+    }
+    compile(group: 'com.google.api-client', name: 'google-api-client-android', version: '1.21.0')
+            {
+                // Exclude play services, since we're not using this yet.
+                exclude(group: 'com.google.android.gms:play-services', module: 'google-play-services')
+            }
+    compile(group: 'com.google.http-client', name: 'google-http-client-android', version: '1.21.0') {
+        exclude(group: 'com.google.android', module: 'android')
+    }
+
 }
 
 appengine {

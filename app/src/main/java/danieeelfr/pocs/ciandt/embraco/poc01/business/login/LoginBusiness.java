@@ -31,30 +31,28 @@ public class LoginBusiness {
     }
 
     public UsuarioModel ValidarLogin(String usuario, String senha) {
-
         _usuario = usuario;
         _senha = senha;
+
+        try {
+            usuarioModel = ConfiguraTask().execute().get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        return usuarioModel;
+    }
+
+    private AsyncTask<Void, Void, UsuarioModel> ConfiguraTask() {
 
         AsyncTask<Void, Void, UsuarioModel> task = new AsyncTask<Void, Void, UsuarioModel>() {
             @Override
             protected UsuarioModel doInBackground(Void... params) {
-                OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+                LoginService loginService = new LoginService(_context);
 
-                final Retrofit.Builder builder = new Retrofit.Builder()
-                        .baseUrl("https://pocembraco.appspot.com/_ah/api/pocEmbracoApi/v1/")
-                        .addConverterFactory(GsonConverterFactory.create());
-
-                Retrofit retrofit = builder.client(httpClient.build()).build();
-                LoginContract client = retrofit.create(LoginContract.class);
-                Call<UsuarioModel> call = client.getUsuario(_usuario, _senha);
-
-                try {
-                    usuarioModel = call.execute().body();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                // return userInfo.body();
+                usuarioModel = loginService.ValidarLogin(_usuario, _senha);
                 return usuarioModel;
             }
 
@@ -64,17 +62,9 @@ public class LoginBusiness {
 
                 super.onPostExecute(usuarioModel);
             }
+
         };
 
-        //task.execute();
-        try {
-            usuarioModel = task.execute().get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
-
-        return usuarioModel;
-    }
+        return  task;
+    };
 }

@@ -22,7 +22,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class LoginService {
 
     private Context _context;
-    private Response<UsuarioModel> userInfo;
+    private UsuarioModel _usuarioModel;
+    private String _usuario;
+    private String _senha;
 
     public LoginService(Context context)
     {
@@ -32,6 +34,8 @@ public class LoginService {
     public UsuarioModel ValidarLogin(String usuario, String senha)
     {
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+        _usuario = usuario;
+        _senha = senha;
 
         final Retrofit.Builder builder = new Retrofit.Builder()
                 .baseUrl("https://pocembraco.appspot.com/_ah/api/pocEmbracoApi/v1/")
@@ -39,28 +43,14 @@ public class LoginService {
 
         Retrofit retrofit = builder.client(httpClient.build()).build();
         LoginContract client = retrofit.create(LoginContract.class);
-        Call<UsuarioModel> call = client.getUsuario(usuario, senha);
+        Call<UsuarioModel> call = client.getUsuario(_usuario, _senha);
 
         try {
-            userInfo = call.execute();
+            _usuarioModel = call.execute().body();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        return userInfo.body();
-//        call.enqueue(new Callback<UsuarioModel>() {
-//            @Override
-//            public void onResponse(Call<UsuarioModel> call, Response<UsuarioModel> response) {
-//                userInfo = response.body();
-//            }
-//
-//            @Override
-//            public void onFailure(Call<UsuarioModel> call, Throwable t) {
-//                Toast.makeText(_context, "Ops: " + t.getMessage(), Toast.LENGTH_LONG).show();
-//
-//            }
-//        });
-//
-//        return userInfo;
+        return _usuarioModel;
     }
 }

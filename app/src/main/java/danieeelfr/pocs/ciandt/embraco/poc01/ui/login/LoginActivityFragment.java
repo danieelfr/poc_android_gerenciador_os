@@ -1,6 +1,8 @@
 package danieeelfr.pocs.ciandt.embraco.poc01.ui.login;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.support.annotation.BoolRes;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -22,6 +24,9 @@ import static danieeelfr.pocs.ciandt.embraco.poc01.R.id.btnEntrar;
  */
 public class LoginActivityFragment extends Fragment {
 
+    ProgressDialog progressDialog;
+    Boolean loginValido;
+
     public LoginActivityFragment() {
     }
 
@@ -32,10 +37,32 @@ public class LoginActivityFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
         Button btnEntrar = (Button)view.findViewById(R.id.btnEntrar);
 
+        loginValido = false;
+
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            Login();
+
+                progressDialog = ProgressDialog.show(getActivity(), "Please wait ...",  "Task in progress ...", true);
+                progressDialog.setCancelable(true);
+
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                           Login();
+
+                            if (loginValido)
+                            {
+                                Intent intent = new Intent(getActivity(), HomeActivity.class);
+                                startActivity(intent);
+                            }
+
+                        } catch (Exception e) {
+                            Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }).start();
             }
         });
 
@@ -47,19 +74,19 @@ public class LoginActivityFragment extends Fragment {
         EditText txtUsuario = (EditText)getActivity().findViewById(R.id.txtUsuario);
         EditText txtSenha = (EditText)getActivity().findViewById(R.id.txtSenha);
 
-        LoginManager loginManager = new LoginManager(getContext());
+        LoginManager loginManager = new LoginManager(getActivity());
 
-       UsuarioModel usuarioModel = loginManager.Login(txtUsuario.getText().toString(), txtSenha.getText().toString());
+        UsuarioModel usuarioModel = loginManager.Login(txtUsuario.getText().toString(), txtSenha.getText().toString());
 
         if (usuarioModel != null)
         {
-            Intent intent = new Intent(getActivity(), HomeActivity.class);
-            startActivity(intent);
+            loginValido = true;
         }
-        else {
-            Toast.makeText(getContext(), "Login inválido, tente novamente!", Toast.LENGTH_SHORT).show();
+        else
+        {
+            loginValido = false;
         }
 
-
+        progressDialog.dismiss();
     }
 }

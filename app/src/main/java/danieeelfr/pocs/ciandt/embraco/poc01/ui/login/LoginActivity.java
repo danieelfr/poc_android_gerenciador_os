@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Toast;
 
 import danieeelfr.pocs.ciandt.embraco.poc01.R;
 
@@ -26,6 +27,11 @@ public class LoginActivity extends AppCompatActivity {
 //                        .setAction("Action", null).show();
 //            }
 //        });
+    }
+
+    public void ExibirMensagemLoginInvalido()
+    {
+        Toast.makeText(this, "Login inválido, tente novamente!", Toast.LENGTH_LONG).show();
     }
 
 }

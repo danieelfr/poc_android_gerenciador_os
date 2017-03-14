@@ -4,6 +4,8 @@ xmlns:tools="http://schemas.android.com/tools"
 tools:context="danieeelfr.pocs.ciandt.embraco.poc01.ui.home.HomeActivityFragment"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
+
+android:padding="30dp"
 android:id="@+id/content_home"
 tools:showIn="@layout/activity_home"
 android:orientation="vertical">
@@ -15,18 +17,23 @@ android:orientation="vertical">
     android:layout_weight="1" >
 
     <Button
-        android:layout_width="0dip"
         android:id="@+id/btnOrdensServico"
+        style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+        android:layout_width="0dip"
         android:layout_height="match_parent"
-        android:text="Ordens de Serviço agendadas"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:background="@drawable/list_item_background"
+        android:elevation="0dp"
+        android:lineSpacingExtra="18sp"
+        android:text="ORDENS DE SERVIÇO"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <Button
-        android:layout_width="0dip"
         android:id="@+id/btnHistoricoAtendimentos"
+        android:layout_width="0dip"
         android:layout_height="match_parent"
-        android:text="Histórico de atendimentos"
-        android:layout_weight="1"/>
+        android:layout_weight="1" />
 </LinearLayout>
 
 <LinearLayout
@@ -46,20 +53,5 @@ android:orientation="vertical">
         android:layout_weight="1"/>
 </LinearLayout>
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="0dip"
-    android:orientation="horizontal"
-    android:layout_weight="1" >
 
-    <Button
-        android:layout_width="0dip"
-        android:layout_height="match_parent"
-        android:layout_weight="1" />
-
-    <Button
-        android:layout_width="0dip"
-        android:layout_height="match_parent"
-        android:layout_weight="1" />
-</LinearLayout>
 </LinearLayout>

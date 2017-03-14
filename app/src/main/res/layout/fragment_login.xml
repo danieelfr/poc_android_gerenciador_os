@@ -16,7 +16,11 @@ android:fitsSystemWindows="true">
     android:paddingLeft="16dp"
     android:paddingRight="16dp">
 
-
+    <ImageView android:src="@android:drawable/ic_lock_lock"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="center_horizontal" />
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,6 +30,7 @@ android:fitsSystemWindows="true">
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
+            android:text="teste"
             android:hint="Usuário" />
     </android.support.design.widget.TextInputLayout>
 
@@ -38,6 +43,7 @@ android:fitsSystemWindows="true">
         <EditText android:id="@+id/txtSenha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="123"
             android:inputType="textPassword"
             android:hint="Senha"/>
     </android.support.design.widget.TextInputLayout>
@@ -51,11 +57,7 @@ android:fitsSystemWindows="true">
         android:padding="16dp"
         android:text="Entrar"/>
 
-    <ImageView android:src="@android:drawable/ic_lock_lock"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="16dp"
-        android:layout_gravity="center_horizontal" />
+
 
 </LinearLayout>
 </ScrollView>

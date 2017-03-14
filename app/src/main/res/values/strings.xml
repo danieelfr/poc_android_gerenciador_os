@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">Poc01</string>
+    <string name="app_name">Gerenciador de OS</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-    <string name="title_activity_login">LoginActivity</string>
-    <string name="title_activity_home">HomeActivity</string>
-    <string name="title_activity_atendimento">AtendimentoActivity</string>
-    <string name="title_activity_detalhe_atendimento">DetalheAtendimentoActivity</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_home">Início</string>
+    <string name="title_activity_atendimento">Ordens de serviço</string>
+    <string name="title_activity_detalhe_atendimento">Detalhes da OS</string>
 </resources>

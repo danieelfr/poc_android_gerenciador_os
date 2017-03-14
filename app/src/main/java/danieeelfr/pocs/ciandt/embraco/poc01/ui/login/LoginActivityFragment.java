@@ -43,22 +43,23 @@ public class LoginActivityFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                progressDialog = ProgressDialog.show(getActivity(), "Please wait ...",  "Task in progress ...", true);
+                progressDialog = ProgressDialog.show(getActivity(), "Login",  "Validando dados...", true);
                 progressDialog.setCancelable(true);
 
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
                         try {
-                           Login();
+                         //   Login();
 
-                            if (loginValido)
+                           // if (loginValido)
                             {
                                 Intent intent = new Intent(getActivity(), HomeActivity.class);
                                 startActivity(intent);
                             }
 
                         } catch (Exception e) {
+                            progressDialog.dismiss();
                             Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }

@@ -1,38 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
+    android:background="@drawable/list_item_background"
     android:paddingTop="10dp"
     android:paddingBottom="10dp"
-    android:layout_height="match_parent">
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp"
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="3.5"
         android:orientation="vertical">
 
         <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvDataPrevista"
-        android:textStyle="bold"
-        android:paddingTop="20dp"
-        android:textSize="12dp"
-        android:textAlignment="center"
-        android:text="Data prevista" />
+            android:id="@+id/tvDataPrevista"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="casual"
+            android:paddingTop="50dp"
+            android:text="Data"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title"
+            android:textSize="12sp"
+            android:textStyle="bold" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/tvHoraInicioPrevisto"
-            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:paddingTop="5dp"
-            android:textSize="12dp"
+            android:layout_weight="1"
+            android:text="Hora"
             android:textAlignment="center"
-            android:text="Hora de início" />
+            android:textSize="12dp" />
+
+
 
     </LinearLayout>
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,67 +53,113 @@
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/tvCodOS"
-            android:textStyle="bold"
-            android:textSize="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="Cód. OS"
             android:textAlignment="center"
-            android:text="Cód. OS" />
+            android:textAppearance="@android:style/TextAppearance.Small"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="5dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Button"
-                android:text="Nome: " />
+                android:text="Cliente: "
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textSize="12sp" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/tvCliente"
-                android:text="Nome do Cliente" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Nome do Cliente"
+                android:textSize="12sp" />
         </LinearLayout>
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="5dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Button"
-                android:text="Endereço: " />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvEndereço"
-            android:text="Endereço do atendimento" />
+                android:text="Endereço: "
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvEndereço"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Endereço do atendimento"
+                android:textSize="10sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="5dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Button"
-                android:text="Equipamento: " />
-        <TextView
+                android:text="Equipamento: "
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvEquipamento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Descrição do equipamento"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tvEquipamento"
-            android:text="Descrição do equipamento" />
+            android:paddingTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status: "
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Agendado"
+                android:textSize="10sp" />
+
+
         </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:src="@drawable/ic_input_black_24dp" />
 
     </LinearLayout>
 

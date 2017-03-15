@@ -52,7 +52,6 @@ public class DetalheAtendimentoActivityFragment extends Fragment {
         txtCliente.setText(atendimentoModel.getNomeCliente());
         txtEndereco.setText(atendimentoModel.getEndereco());
         txtDescricaoProblema.setText(atendimentoModel.getDescricaoProblema());
-
     }
 
     private void IniciarBotoes(View view)
@@ -94,6 +93,23 @@ public class DetalheAtendimentoActivityFragment extends Fragment {
                 ConfirmarAcaoIniciarAtendimento();
             }
         });
+
+        Button btnFinalizarAtendimento = (Button)view.findViewById(R.id.btnFinalizarAtendimento);
+        ImageButton btnFimAtendimento = (ImageButton)view.findViewById(R.id.btnFimAtendimento);
+
+        btnFinalizarAtendimento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ConfirmarAcaoFinalizarAtendimento();
+            }
+        });
+
+        btnFimAtendimento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ConfirmarAcaoFinalizarAtendimento();
+            }
+        });
     }
 
     private void ConfirmarAcaoIniciarAtendimento()
@@ -101,13 +117,24 @@ public class DetalheAtendimentoActivityFragment extends Fragment {
         TextView txtCodOS = (TextView)getActivity().findViewById(R.id.txtCodOS);
 
         String codOS = txtCodOS.getText().toString();
-        String mensagem = "Iniciar o atendimento da Ordem de Serviço: " + codOS + "?";
-        String titulo ="Atendimento";
+        String mensagem = "Iniciar o atendimento da " + codOS + "?";
+        String titulo ="INICIAR ATENDIMENTO";
 
-        ConfirmaAcao(codOS, mensagem, titulo);
+        ConfirmaAcao(mensagem, titulo);
     }
 
-    private void ConfirmaAcao(String codOS, String mensagemConfirmacao, String tituloModal) {
+    private void ConfirmarAcaoFinalizarAtendimento()
+    {
+        TextView txtCodOS = (TextView)getActivity().findViewById(R.id.txtCodOS);
+
+        String codOS = txtCodOS.getText().toString();
+        String mensagem = "Finalizar o atendimento da " + codOS + "?";
+        String titulo ="FINALIZAR ATENDIMENTO";
+
+        ConfirmaAcao(mensagem, titulo);
+    }
+
+    private void ConfirmaAcao(String mensagemConfirmacao, String tituloModal) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
         builder.setTitle(tituloModal);
@@ -121,7 +148,7 @@ public class DetalheAtendimentoActivityFragment extends Fragment {
         });
         builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface arg0, int arg1) {
-                return;
+                Toast.makeText(getActivity(), "Finalizar atendimento  (gravar posição e hora)=" + arg1, Toast.LENGTH_SHORT).show();
             }
         });
         alerta = builder.create();

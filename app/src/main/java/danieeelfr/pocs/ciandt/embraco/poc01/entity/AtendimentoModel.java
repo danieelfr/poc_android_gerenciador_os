@@ -103,6 +103,11 @@ public class AtendimentoModel implements Serializable {
         lista.add(atendimento3);
         lista.add(atendimento4);
         lista.add(atendimento5);
+        lista.add(atendimento1);
+        lista.add(atendimento2);
+        lista.add(atendimento3);
+        lista.add(atendimento4);
+        lista.add(atendimento5);
 
         return lista;
     }

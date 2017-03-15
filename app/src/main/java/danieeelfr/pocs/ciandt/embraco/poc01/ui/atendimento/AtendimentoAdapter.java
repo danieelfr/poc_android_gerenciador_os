@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -66,6 +67,8 @@ public class AtendimentoAdapter extends BaseAdapter {
 
         TextView tvEquipamento = (TextView) view.findViewById(R.id.tvEquipamento);
         tvEquipamento.setText(atendimento.getEquipamento().toString());
+
+        // Button btn
 
         return view;
     }

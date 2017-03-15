@@ -50,9 +50,9 @@ public class LoginActivityFragment extends Fragment {
                     @Override
                     public void run() {
                         try {
-                         //   Login();
+                            Login();
 
-                           // if (loginValido)
+                            if (loginValido)
                             {
                                 Intent intent = new Intent(getActivity(), HomeActivity.class);
                                 startActivity(intent);

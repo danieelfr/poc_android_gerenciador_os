@@ -5,106 +5,284 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    app:layout_scrollFlags="scroll"
     tools:context="danieeelfr.pocs.ciandt.embraco.poc01.ui.atendimento.DetalheAtendimentoActivityFragment"
     tools:showIn="@layout/activity_detalhe_atendimento">
 
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:scrollbars="vertical"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.35"
+                    android:text="Ordem de serviço: " />
+
+                <TextView
+                    android:id="@+id/txtCodOS"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.60"
+                    android:paddingLeft="2dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                    android:text="Ordem Serviço..." />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:text="Cliente: " />
+
+                <TextView
+                    android:id="@+id/txtCliente"
+                    android:layout_width="match_parent"
+                    android:paddingTop="2dp"
+                    android:paddingLeft="5dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.75"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                    android:text="Cliente..." />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.35"
+                    android:text="Equipamento: " />
+
+                <TextView
+                    android:id="@+id/txtEquipamento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="2dp"
+                    android:paddingLeft="5dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                    android:layout_weight="0.65"
+                    android:text="Equipamento..." />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.30"
+                    android:text="Endereço: "
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/txtEndereco"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="2dp"
+                    android:layout_weight="0.70"
+                    android:lines="2"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                    android:text="Endereço... Endereço... Endereço..." />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.30"
+                    android:text="Descrição: "
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/txtDescricaoProblema"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="2dp"
+                    android:paddingLeft="5dp"
+                    android:layout_weight="0.70"
+                    android:lines="2"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                    android:text="Descrição do problema...  Descrição do problema...  Descrição do problema...  " />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
     <LinearLayout
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="2dp"
+
         android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.35"
-            android:text="Ordem Serviço: "
-            android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/txtCodOS"
-            android:layout_width="0dp"
+            <ImageButton
+                android:id="@+id/btnTelefone"
+                android:layout_width="match_parent"
+                android:backgroundTint="@android:color/transparent"
+                android:layout_height="24dp"
+                android:layout_weight="1"
+                android:cropToPadding="true"
+                android:padding="0dp"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_contact_phone_black_24dp" />
+
+            <Button
+                android:id="@+id/btnAbrirTelefone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/white"
+                android:padding="10dp"
+                android:text="Chamar" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.65"
-            android:text="Ordem Serviço..." />
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btnMapa"
+                android:layout_width="match_parent"
+                android:backgroundTint="@android:color/transparent"
+                android:layout_height="24dp"
+                android:layout_weight="1"
+                android:cropToPadding="true"
+                android:padding="0dp"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_place_black_24dp" />
+
+            <Button
+                android:id="@+id/btnAbrirMapa"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/white"
+                android:padding="10dp"
+                android:text="Mapa" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btnAtendimento"
+                android:layout_width="match_parent"
+                android:backgroundTint="@android:color/transparent"
+                android:layout_height="24dp"
+                android:layout_weight="1"
+                android:cropToPadding="true"
+                android:padding="0dp"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_update_black_24dp" />
+
+            <Button
+                android:id="@+id/btnIniciarAtendimento"
+                android:layout_width="match_parent"
+                android:backgroundTint="@android:color/white"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:text="Iniciar" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btnFimAtendimento"
+                android:layout_width="match_parent"
+                android:backgroundTint="@android:color/transparent"
+                android:layout_height="24dp"
+                android:layout_weight="1"
+                android:cropToPadding="true"
+                android:padding="0dp"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_cloud_done_black_24dp" />
+
+            <Button
+                android:id="@+id/btnFinalizarAtendimento"
+                android:layout_width="match_parent"
+                android:backgroundTint="@android:color/white"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:text="Finalizar" />
+
+
+        </LinearLayout>
+
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.20"
-            android:text="Cliente: "
-            android:textAppearance="@style/TextAppearance.AppCompat.Button" />
-
-        <TextView
-            android:id="@+id/txtCliente"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.80"
-            android:text="Cliente..." />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.25"
-            android:text="Endereço: "
-            android:textAlignment="textStart"
-            android:textAppearance="@style/TextAppearance.AppCompat.Button" />
-
-        <TextView
-            android:id="@+id/txtEndereco"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.75"
-            android:lines="4"
-            android:text="Endereço... Endereço... Endereço... Endereço... Endereço... Endereço... Endereço... Endereço... Endereço... Endereço... Endereço... Endereço... Endereço... Endereço..." />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.25"
-            android:text="Descrição: "
-            android:textAlignment="textStart"
-            android:textAppearance="@style/TextAppearance.AppCompat.Button" />
-
-        <TextView
-            android:id="@+id/txtDescricaoProblema"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.75"
-            android:lines="4"
-            android:text="Descrição do problema...  Descrição do problema...  Descrição do problema...  Descrição do problema...  Descrição do problema...  Descrição do problema...  Descrição do problema... " />
-    </LinearLayout>
-
-
-    <Button
-        android:id="@+id/btnIniciarAtendimento"
-        style="@android:style/Widget.Holo.Light.Button"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:ems="5"
-        android:text="Iniciar Atendimento" />
 
 </LinearLayout>
 

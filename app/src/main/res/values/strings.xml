@@ -9,4 +9,5 @@
     <string name="title_activity_home">Início</string>
     <string name="title_activity_atendimento">Ordens de serviço</string>
     <string name="title_activity_detalhe_atendimento">Detalhes da OS</string>
+    <string name="title_activity_mapa">Mapa</string>
 </resources>

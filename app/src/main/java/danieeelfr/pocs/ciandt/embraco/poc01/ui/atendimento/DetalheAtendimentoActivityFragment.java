@@ -110,6 +110,25 @@ public class DetalheAtendimentoActivityFragment extends Fragment {
                 ConfirmarAcaoFinalizarAtendimento();
             }
         });
+
+        Button btnAbrirMapa = (Button)view.findViewById(R.id.btnAbrirMapa);
+        ImageButton btnMapa = (ImageButton)view.findViewById(R.id.btnMapa);
+
+        btnAbrirMapa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), MapaActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnMapa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), MapaActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void ConfirmarAcaoIniciarAtendimento()
